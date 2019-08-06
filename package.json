@@ -1,0 +1,59 @@
+{
+  "name": "personal-assistant-glip-bot",
+  "version": "0.1.0",
+  "description": "Personal assistant bot",
+  "main": "dist/server/index.js",
+  "scripts": {
+    "ngrok": "ngrok http -region ap 4100",
+    "start": "node -r @babel/register ./node_modules/.bin/rcpf src/server/index.js",
+    "compile": "babel src/server --out-dir dist/server",
+    "build": "npm run clean && npm run compile",
+    "clean": "node build/clean.js",
+    "build-lambda": "node cmds/build",
+    "deploy-lambda": "node cmds/deploy",
+    "deploy": "npm run build-lambda && npm run deploy-lambda",
+    "local-dynamo": "node -r @babel/register build/dynamo-local.js",
+    "watch": "cd deploy && ../node_modules/.bin/sls logs -f app -t"
+  },
+  "keywords": [
+    "RingCentral",
+    "Chatbot",
+    "AI"
+  ],
+  "author": "Drake Zhao <drake.zhao@ringcentral.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "dynamodb-local": "0.0.29",
+    "ngrok": "^3.1.0",
+    "serverless": "^1.45.1",
+    "shelljs": "^0.8.3",
+    "standard": "^12.0.1",
+    "yarn-upgrade-all": "^0.5.0"
+  },
+  "dependencies": {
+    "glip-personal-bot-skill-time": "^0.3.3",
+    "ringcentral-personal-chatbot": "^0.10.6",
+    "on-leave-control-glip-bot-skill": "^0.1.0",
+    "serverless-http": "^2.0.1"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "/dist/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rc-personal-bot-framework/personal-assistant-glip-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rc-personal-bot-framework/personal-assistant-glip-bot/issues"
+  },
+  "homepage": "https://github.com/rc-personal-bot-framework/personal-assistant-glip-bot#readme"
+}
