@@ -2,6 +2,10 @@
 
 Personal assistant bot created with [RingCentral personal chatbot js](https://github.com/ringcentral/ringcentral-personal-chatbot-js).
 
+![ ](https://github.com/rc-personal-bot-framework/on-leave-control-glip-bot-skill/raw/master/screenshots/s2.png)
+
+![ ](https://github.com/rc-personal-bot-framework/on-leave-control-glip-bot-skill/raw/master/screenshots/s1.png)
+
 ## Quick start
 
 Let's start a simple chatbot server and login to it with you sandbox glip account, and you account will auto respond to keywords set by you.
